@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Case de Desenvolvimento",
   "main": "index.js",
+  "private": "true",
+  "type": "module",
   "scripts": {
-    "server": "parcel index.html",
+    "dev": "vite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,12 +22,14 @@
   "devDependencies": {
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "parcel": "^2.13.3",
+    "globals": "^16.0.0",
     "process": "^0.11.10",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1"
   },
   "dependencies": {
     "@prisma/client": "^6.4.1",
+    "lucide-react": "^0.475.0",
     "prisma": "^6.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
