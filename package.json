@@ -1,0 +1,34 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "Case de Desenvolvimento",
+  "main": "index.js",
+  "scripts": {
+    "server": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustx21/the-news.git"
+  },
+  "author": "Gustavo André",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gustx21/the-news/issues"
+  },
+  "homepage": "https://github.com/gustx21/the-news#readme",
+  "devDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "parcel": "^2.13.3",
+    "process": "^0.11.10",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.4.1",
+    "prisma": "^6.4.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.2.0"
+  }
+}
