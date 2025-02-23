@@ -1,13 +1,19 @@
+import { Coffee } from "lucide-react";
+
 function NavBar() {
     return (
         <nav>
-            <img src="" alt="Logo" />
-            
-            <a href="http://" target="_blank" rel="noopener noreferrer">Sobre nós</a>
+            <div id="logo">
+                <Coffee />
 
-            <a href="http://">Produtos</a>
+                <p>The News</p>
+            </div>
 
-            <a href="mailto:">Contato</a>
+            <div className="login">
+                <a href="http://"><button type="button" className="button-login">Login</button></a>
+
+                <a href="http://"><button type="button" className="button-subscribe">Inscreva-se</button></a>
+            </div>
         </nav>
     )
 }
