@@ -1,10 +1,16 @@
-import NavBar from "../components/navbar";
+import NavBar from "../components/navbar.tsx";
+import Section from "../components/section.tsx";
+import Login from "./login.tsx";
+import '../style/home.css';
 
 function Home() {
     return (
         <>
             <NavBar />
-            <h1>Página principal</h1>
+            <hr />
+            <Login />
+            <hr />
+            <Section />
         </>
     )
 }
