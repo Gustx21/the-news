@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/login";
-import Home from "./pages/home";
+import Home from "./pages/home.tsx";
+import Content from "./pages/content.tsx";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="login" element={<Login />} />
-                <Route path="ranking" element={<Home />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/login/home" element={<Content />} />
             </Routes>
         </BrowserRouter>
     )
