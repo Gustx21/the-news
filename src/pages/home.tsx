@@ -1,5 +1,5 @@
 import NavBar from "../components/navbar.tsx";
-import Section from "../components/section.tsx";
+import Newsletter from "../components/newsletter.tsx";
 import Login from "./login.tsx";
 import '../style/home.css';
 
@@ -10,7 +10,7 @@ function Home() {
             <hr />
             <Login />
             <hr />
-            <Section />
+            <Newsletter />
         </>
     )
 }
