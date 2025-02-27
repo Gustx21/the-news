@@ -5,7 +5,6 @@ import image from '../assets/career-53.svg';
 function Login(): React.JSX.Element {
     const [email, setEmail] = useState<string>('');
     const [error, setError] = useState<string>('');
-    const [streak, setStreak] = useState<number>(0);
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -14,7 +13,6 @@ function Login(): React.JSX.Element {
             setError('Por favor, insira seu e-mail');
         } else {
             onLogin(email);
-            setStreak(streak + 1);
         }
     }
 
@@ -45,9 +43,13 @@ function Login(): React.JSX.Element {
 export default Login;
 
 function onLogin(email: string) {
-    console.log(email)
-
     useEffect(() => {
-
+        fetch("http://localhost:5000", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(email)
+        })
     }, [email]);
 }
