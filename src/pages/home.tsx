@@ -1,16 +1,18 @@
 import NavBar from "../components/navbar.tsx";
+import Main from "../components/main.tsx";
 import Newsletter from "../components/newsletter.tsx";
-import Login from "./login.tsx";
-import '../style/home.css';
+import Footer from "../components/footer.tsx";
+import "../style/home.css";
 
 function Home() {
     return (
         <>
             <NavBar />
             <hr />
-            <Login />
+            <Main />
             <hr />
             <Newsletter />
+            <Footer />
         </>
     )
 }

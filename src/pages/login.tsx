@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Mail } from "lucide-react";
-import image from '../assets/career-53.svg';
 
 function Login(): React.JSX.Element {
     const [email, setEmail] = useState<string>('');
+    const [name, setName] = useState<string>()
     const [error, setError] = useState<string>('');
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -18,24 +18,23 @@ function Login(): React.JSX.Element {
 
     const handleChange = (event: any) => {
         setEmail(event.target.value);
+        setName(event.target.value)
     }
 
     return (
         <section id="inscription">
-            <img src={image} alt="Ilustração com personagem subindo degrais ao topo." />
-            <div id="form">
-                <h2>Um jeito interativo,<br /> divertido<br /> e eficaz de ler</h2>
+            <h2>Um jeito interativo,<br /> divertido e eficaz<br /> de ficar informado</h2>
 
-                <form method="post" onSubmit={handleSubmit}>
-                    <div className="input">
-                        <Mail />
+            <form method="post" onSubmit={handleSubmit}>
+                <div className="input">
+                    <Mail />
 
-                        <input type="email" name="email" id="email" value={email ? email:error} placeholder="Adicione seu E-mail" onChange={handleChange} />
+                    <input type="text" name="name" id="name" value={name} placeholder="Nome Completo" onChange={handleChange}/>
+                    <input type="email" name="email" id="email" value={email ? email : error} placeholder="E-mail" onChange={handleChange} />
 
-                        <button type="submit" id="subscribe">Inscreva-se</button>
-                    </div>
-                </form>
-            </div>
+                    <button type="submit" className="subscribe">Inscreva-se</button>
+                </div>
+            </form>
         </section>
     )
 }
