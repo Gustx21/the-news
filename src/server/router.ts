@@ -1,6 +1,6 @@
 import fastify, { FastifyReply, FastifyRequest } from "fastify";
 import cors  from "@fastify/cors";
-import { insertUser } from "./database.ts";
+import { insertUser } from "./database-user.ts";
 
 const server = fastify({ logger:true });
 server.register(cors, { origin: "*" });
