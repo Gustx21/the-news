@@ -1,8 +1,8 @@
 {
-  "name": "game",
+  "name": "the-news",
   "version": "1.0.0",
-  "description": "Case de Desenvolvimento",
-  "main": "index.js",
+  "description": "Case de Desenvolvimento: Uma Newsletter com gamificação",
+  "main": "main.ts",
   "private": "true",
   "type": "module",
   "scripts": {
