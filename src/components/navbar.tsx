@@ -10,9 +10,9 @@ function NavBar() {
             </div>
 
             <div className="login">
-                <a href="http://localhost:3000/login"><button type="button" className="button-login">Inscrever-se</button></a>
+                <a href="http://localhost:5173/login"><button type="button" className="button-login">Inscrever-se</button></a>
 
-                <a href="http://localhost:3000/singin"><button type="button" className="button-sing-in">Entrar</button></a>
+                <a href="http://localhost:5173/singin"><button type="button" className="button-sing-in">Entrar</button></a>
             </div>
         </nav>
     )
