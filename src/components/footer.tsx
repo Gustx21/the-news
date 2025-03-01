@@ -3,7 +3,7 @@ import { Coffee } from "lucide-react";
 function Footer() {
     return (
         <footer>
-            <div>
+            <div className="logo">
                 <Coffee />
                 <p>The News</p>
             </div>

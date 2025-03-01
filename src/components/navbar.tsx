@@ -3,7 +3,7 @@ import { Coffee } from "lucide-react";
 function NavBar() {
     return (
         <nav>
-            <div id="logo">
+            <div className="logo">
                 <Coffee />
 
                 <p>The News</p>
