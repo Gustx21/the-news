@@ -1,9 +1,7 @@
-import image from '../assets/career-53.svg';
-
 function Main() {
     return (
         <main>
-            <img src={image} alt="Ilustração com personagem subindo degrais ao topo." />
+            <img src="./src/assets/career-53.svg" alt="Ilustração com personagem subindo degrais ao topo." />
 
             <nav className='main-content'>
                 <h1>O <span>conhecimento</span><br/>abre portas</h1>

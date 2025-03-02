@@ -8,11 +8,22 @@ datasource db {
 }
 
 model User {
-  id Int @id
-  name String
-  email String @unique
-  streak Int
-  historico Json[]
+  id         Int      @id @default(autoincrement())
+  name       String   @db.VarChar(255)
+  email      String   @unique @db.VarChar(155)
+  password   String
+  historic   Historic @relation(fields: [historicId], references: [id])
+  historicId Int      @db.Integer
 
   @@map("user")
+}
+
+model Historic {
+  id     Int      @id
+  name   String   @db.VarChar(255)
+  streak Int      @db.Integer
+  date   DateTime @default(now())
+  User   User[]
+
+  @@map("historic")
 }
