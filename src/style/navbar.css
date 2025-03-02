@@ -1,0 +1,38 @@
+/* NavBar */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    padding: 15px;
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo p {
+    margin-left: 10px;
+}
+.button-login {
+    padding: 10px;
+    margin-right: 10px;
+
+    background-color: #fcbf49;
+
+    border: none;
+    border-radius: 10px;
+}
+.button-login:hover, 
+.button-sing-in:hover {
+    background-color: #eae2b7;
+    border-color: #eae2b7;
+}
+.button-sing-in {
+    padding: 10px;
+
+    background-color: #fff;
+
+    border: 2px solid #fcbf49;
+    border-radius: 10px;
+}

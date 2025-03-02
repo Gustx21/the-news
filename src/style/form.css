@@ -1,0 +1,63 @@
+/* Form */
+#inscription {
+    display: grid;
+    grid-template-columns: auto auto;
+
+    border-width: 2px;
+    border-color: #eae2b7;
+    border-style: solid;
+    border-radius: 15px;
+
+    padding: 2em;
+}
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+img {
+    width: 40%;
+}
+input {
+    width: 60%;
+    padding: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+    border: none;
+    border-radius: 5px;
+    
+    background-color: #dfdfdf;
+}
+.subscribe {
+    padding: 10px 30px;
+
+    border-radius: 10px;
+    border: none;
+
+    background-color: #fcbf49;
+}
+.subscribe:hover {
+    background-color: #eae2b7;
+}
+
+/* Section */
+.cards {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: max-content;
+    justify-content: space-between;
+    gap: 2em;
+
+    margin: 2.5em;
+}
+#newsletter {
+    padding: 48px;
+    width: 70%;
+
+    border: 2px solid #000;
+    border-radius: 15px;
+}
+#newsletter > p {
+    line-height: 1.5;
+}

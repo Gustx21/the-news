@@ -1,0 +1,19 @@
+/* Main */
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+main > nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.main-content h1 {
+    font-size: 3.2em;
+    margin-bottom: 0.6em;
+}
+.main-content span {
+    color: #F77F00;
+}
