@@ -28,3 +28,5 @@ server.post("/user", async (request: FastifyRequest, reply:  FastifyReply): Prom
         reply.status(400).send(error);
     }
 })
+
+server.listen({ port: 5000 });
