@@ -1,0 +1,19 @@
+/* Section */
+.cards {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1.3em;
+
+    margin: 20px;
+}
+#newsletter {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #000;
+    border-style: solid;
+
+    padding: 2em 3em;
+}
