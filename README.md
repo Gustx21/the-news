@@ -1,3 +1,5 @@
+![Imagem de um Cubo.](https://img.icons8.com/?size=100&id=5pdFGqqFSBYr&format=png&color=000000)
+
 # The News
 
 ## :zap: Engajamento com Newsletter: Desafie-se e Ganhe Pontos
