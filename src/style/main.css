@@ -17,3 +17,6 @@ main > nav {
 .main-content span {
     color: #F77F00;
 }
+main img {
+    width: 50%;
+}

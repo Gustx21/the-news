@@ -1,62 +1,57 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Mail, RectangleEllipsis, User } from "lucide-react";
 import { insertUser } from "../server/database-user";
 
 function Login(): React.JSX.Element {
-    const [email, setEmail] = useState<string>('');
-    const [name, setName] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-    const [error, setError] = useState<string>('');
-
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
-        if (!email) {
-            setError('Por favor, insira seu e-mail');
-        } else {
-            onLogin(name, email, password);
+        
+        const formData = new FormData(event.currentTarget);
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const password = formData.get("password");
+        
+        if (name && email && password) {
+            onLogin(name.toString(), email.toString(), password.toString());
         }
-    }
-
-    const handleChange = (event: any) => {
-        setEmail(event.target.value);
-        setName(event.target.value);
-        setPassword(event.target.value);
-    }
-
+    };
+    
     return (
-        <form method="post" id="inscription" onSubmit={handleSubmit}>
-            <div>
-                <h2>Um jeito interativo,<br /> divertido e eficaz<br /> de ficar informado</h2>
+        <div className="body">
+            <main className="inscription">
+                <header>
+                    <h1>The News</h1>
+                    <p>A leitura é crucial para o desenvolvimento intelectual. Amplia horizontes, aumenta  capacidade de empatia e permite adquirir novos conhecimentos.</p>
 
-                <img src="" alt="" />
-            </div>
-            <div id="form">
-                <div>
-                    <User />
-                    <input type="text" name="name" id="name" value={name} placeholder="Nome Completo" onChange={handleChange} />
-                </div>
-                <div>
-                    <Mail />
-                    <input type="email" name="email" id="email" value={email ? email : error} placeholder="E-mail" onChange={handleChange} />
-                </div>
-                <div>
-                    <RectangleEllipsis />
-                    <input type="text" name="password" id="password" value={password} placeholder="Insira sua senha" onChange={handleChange} />
-                </div>
+                    <img className="img-form" src="./src/assets/img_form.png" alt="Ilustração de um personagem usando notebook para envios de newsletter." />
+                </header>
+                <form method="post" onSubmit={handleSubmit}>
+                    <label className="input">
+                        <User />
+                        <input type="text" name="name" id="name" placeholder={"Nome"} required />
+                    </label>
+                    <label className="input">
+                        <Mail />
+                        <input type="email" name="email" id="email" placeholder={"E-mail"} required />
+                    </label>
+                    <label className="input">
+                        <RectangleEllipsis />
+                        <input type="password" name="password" id="password" placeholder={"Senha"} minLength={8} required />
+                    </label>
 
-                <button type="submit" className="subscribe">Inscreva-se</button>
-            </div>
-        </form>
+                    <a href="http://localhost:5173/signin">Já tem uma conta?</a>
+
+                    <button type="submit" className="subscribe">Inscreva-se</button>
+                </form>
+            </main>
+        </div>
     )
 }
 
 export default Login;
 
-function onLogin(name: string, email: string, password: number | string) {
-    const pw = password.toString();
-
+function onLogin(name: string, email: string, password: string) {
     useEffect(() => {
-        insertUser(name, email, pw);
-    }, [email]);
+        insertUser(name, email, password);
+    }, [name && email && password]);
 }
