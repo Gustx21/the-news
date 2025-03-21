@@ -11,6 +11,7 @@ function Home() {
             <Main />
             <hr />
             <Newsletter />
+            <hr />
             <Footer />
         </>
     )

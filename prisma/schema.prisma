@@ -7,23 +7,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id         Int      @id @default(autoincrement())
-  name       String   @db.VarChar(255)
-  email      String   @unique @db.VarChar(155)
-  password   String
-  historic   Historic @relation(fields: [historicId], references: [id])
-  historicId Int      @db.Integer
+model Users {
+  id       Int        @id @default(autoincrement())
+  name     String     @db.VarChar(255)
+  email    String     @unique @db.VarChar(155)
+  password String     @unique @db.VarChar(100)
+  historic Historic[]
 
-  @@map("user")
+  @@map("users")
 }
 
 model Historic {
-  id     Int      @id
-  name   String   @db.VarChar(255)
-  streak Int      @db.Integer
-  date   DateTime @default(now())
-  User   User[]
+  id      Int      @id
+  name    String   @db.VarChar(255)
+  streak  Int      @db.Integer
+  date    DateTime @default(now())
+  Users   Users   @relation(fields: [usersId], references: [id])
+  usersId Int  @db.Integer
 
   @@map("historic")
 }
