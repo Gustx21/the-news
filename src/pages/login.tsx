@@ -23,7 +23,7 @@ function Login(): React.JSX.Element {
                     <h1>The News</h1>
                     <p>A leitura é crucial para o desenvolvimento intelectual. Amplia horizontes, aumenta  capacidade de empatia e permite adquirir novos conhecimentos.</p>
 
-                    <img className="img-form" src="./src/assets/subscribe.png" alt="Ilustração de um personagem usando notebook para envios de newsletter." />
+                    <img className="img-form" src="./src/assets/subscribe.jpg" alt="Ilustração de um personagem usando notebook para envios de newsletter." />
                 </header>
                 <form method="post" onSubmit={handleSubmit}>
                     <label className="input">

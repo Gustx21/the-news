@@ -1,40 +1,36 @@
 import { ReactNode, useEffect, useState } from "react";
 
-interface Post {
-    id: number,
-    title: string,
-    description: string,
-    image: URL,
-    alt: string
+declare global {
+  interface Window {
+    SubstackFeedWidget?: {
+      substackUrl: string;
+      posts: number;
+      layout: string;
+    };
+  }
 }
 
 function Newsletter() {
-    const [posts, setPosts] = useState<Post[]>([]);
-
-    // Requisição de Posts na API
     useEffect(() => {
-        fetch("http://localhost:3000/newsletter", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-            .then((resp) => resp.json())
-            .then((data) => setPosts(data))
-            .catch((err) => console.error(err));
+        window.SubstackFeedWidget = {
+            substackUrl: "gustx21.substack.com",
+            posts: 3,
+            layout: "center",
+        };
+
+        const script = document.createElement("script");
+        script.src = "https://substackapi.com/embeds/feed.js";
+        script.async = true;
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        };
     }, []);
 
-    // Conteúdo de Posts
-    const content: ReactNode = posts.map((post) => {
-        return (
-            <div key={post.id} id="newsletter">
-                <h3>{post.title}</h3>
-                <p>{post.description}</p>
-            </div>
-        )
-    });
-
-    return <section className="cards">{content}</section>
-}
+    return (
+        <div id="substack-feed-embed"></div>
+    )
+};
 
 export default Newsletter;
