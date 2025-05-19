@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect } from "react";
 
 declare global {
   interface Window {
@@ -15,7 +15,7 @@ function Newsletter() {
         window.SubstackFeedWidget = {
             substackUrl: "gustx21.substack.com",
             posts: 3,
-            layout: "center",
+            layout: "center"
         };
 
         const script = document.createElement("script");
@@ -29,7 +29,7 @@ function Newsletter() {
     }, []);
 
     return (
-        <div id="substack-feed-embed"></div>
+        <div id="substack-feed-embed" className="cards"></div>
     )
 };
 
