@@ -10,7 +10,7 @@ function Footer() {
             <nav>
                 <h3>Recursos</h3>
                 <a href="#" target="_blank" rel="noopener noreferrer">Artigos</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">Primeiro Post</a>
+                <a href="https://substack.com/@gustx21" target="_blank" rel="noopener noreferrer">Posts</a>
                 <a href="#" target="_blank" rel="noopener noreferrer">Nosso Canal no Youtube</a>
             </nav>
             <nav>

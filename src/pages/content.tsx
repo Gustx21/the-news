@@ -8,8 +8,6 @@ function Content() {
         <>
             <NavBar />
             <hr />
-            <Main />
-            <hr />
             <Section/>
             <hr />
             <Footer />

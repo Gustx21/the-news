@@ -6,9 +6,7 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "posts": "json-server ./src/server/newsletter.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite"
   },
   "repository": {
     "type": "git",

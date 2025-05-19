@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { insertUser } from "../server/database-user";
 
 function Input() {
     const handleInscribe = (event: React.FormEvent<HTMLFormElement>) => {
@@ -6,6 +7,10 @@ function Input() {
 
         const formData = new FormData(event.currentTarget);
         const email = formData.get("email");
+
+        if (email) {
+            onLogin(email.toString());
+        }
     }
 
     return (
@@ -14,6 +19,12 @@ function Input() {
             <button type="submit" className="subscribe">Inscreva-se</button>
         </form>
     )
+}
+
+function onLogin(email: string) {
+    useEffect(() => {
+        insertUser(email);
+    }, [email]);
 }
 
 export default Input;
