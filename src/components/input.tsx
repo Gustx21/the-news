@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { insertUser } from "../server/database-user";
 
 function Input() {
     const [message, setMessage] = useState("");
@@ -32,7 +31,12 @@ function Input() {
 
 function onLogin(email: string) {
     useEffect(() => {
-        insertUser(email);
+        fetch("http://localhost:5000/user", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
     }, [email]);
 }
 
